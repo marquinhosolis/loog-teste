@@ -1,0 +1,37 @@
+body {
+	padding-bottom: 60px;
+	@media (min-width: 768px) {
+		padding: 0;
+	}
+}
+
+.pageWrapper {
+	@media (min-width: 768px) {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+nav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	@media (min-width: 768px) {
+		position: relative;
+		width: 25%;
+		height: 100vh;
+	}
+	@media (min-width: 1024px) {
+		width: 20%;
+	}
+}
+main {
+	background: red;
+	@media (min-width: 768px) {
+		width: 75%;
+	}
+	@media (min-width: 1024px) {
+		width: 80%;
+	}
+}
