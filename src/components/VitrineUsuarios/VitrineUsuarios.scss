@@ -6,12 +6,19 @@
 	gap: 15px;
 	flex-wrap: wrap;
 	a {
+		width: calc(50% - 15px);
+		display: block;
 		text-decoration: none;
 		color: inherit;
+		@media (min-width: 768px) {
+			width: calc(25% - 15px);
+		}
+		@media (min-width: 1024px) {
+			width: calc(20% - 15px);
+		}
 	}
 	.usuarioCard {
-		max-width: 250px;
-		padding: 27px;
+		padding: 20px;
 		border-radius: 8px;
 		border: solid 1px #ddd;
 		text-align: center;
