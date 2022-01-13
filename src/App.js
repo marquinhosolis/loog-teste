@@ -13,7 +13,9 @@ export default function App() {
 			{/* area principal da pagina */}
 			<main>
 				{/* titulo da pagina */}
-				<h1 className="pageTitle">Nome do Grupo {grupo}</h1>
+				<h1 className="pageTitle">
+					Exibindo membros do Grupo: {grupo}
+				</h1>
 				{/* searchbox */}
 				<input
 					className="searchBox"

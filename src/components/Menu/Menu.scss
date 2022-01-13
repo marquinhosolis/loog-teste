@@ -6,32 +6,30 @@ nav {
 		align-items: center;
 		justify-content: space-between;
 		li {
-			a {
-				display: block;
-				padding: 20px 30px;
-				text-decoration: none;
-				color: #666;
-				transition: all 0.2s linear;
-				svg {
-					vertical-align: middle;
-					font-size: 32px;
-					@media (min-width: 768px) {
-						margin-right: 8px;
-					}
-				}
-				span {
-					display: none;
-					@media (min-width: 768px) {
-						display: inline-block;
-					}
-				}
-				&:hover {
-					color: #fff;
-					background: lightcoral;
-				}
+			cursor: pointer;
+			display: block;
+			padding: 20px 30px;
+			color: #666;
+			transition: all 0.2s linear;
+			svg {
+				vertical-align: middle;
+				font-size: 32px;
 				@media (min-width: 768px) {
-					padding: 20px;
+					margin-right: 8px;
 				}
+			}
+			span {
+				display: none;
+				@media (min-width: 768px) {
+					display: inline-block;
+				}
+			}
+			&:hover {
+				color: #fff;
+				background: lightcoral;
+			}
+			@media (min-width: 768px) {
+				padding: 20px;
 			}
 		}
 		@media (min-width: 768px) {
