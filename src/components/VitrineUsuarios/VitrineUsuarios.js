@@ -1,7 +1,7 @@
 import React from 'react';
 import './VitrineUsuarios.scss';
 
-export default function VitrineUsuarios() {
+export default function VitrineUsuarios(props) {
 	return (
 		<div className="usuariosWrapper">
 			<a href="#">
