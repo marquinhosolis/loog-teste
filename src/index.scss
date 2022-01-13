@@ -21,7 +21,9 @@ nav {
 	left: 0;
 	width: 100%;
 	@media (min-width: 768px) {
-		position: relative;
+		position: sticky;
+		top: 0;
+		left: 0;
 		width: 30%;
 		height: 100vh;
 	}
