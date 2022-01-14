@@ -12,10 +12,7 @@ export default function VitrineUsuarios(props) {
 
 	// monta a url da api
 	const endpoint = `http://api.github.com/orgs/${props.grupo}/members`;
-	const urlApi = `${endpoint}?per_page=25&page=${paginaAtual}`;
-
-	//const endpoint = `https://randomuser.me/api/`;
-	//const urlApi = `${endpoint}?results=25&gender=${props.group}`;
+	const urlApi = `${endpoint}?per_page=25&page=${paginaAtual}&order=DESC`;
 
 	// useEffect para controlar a paginação (incrementado com scroll infinito)
 	useEffect(() => {
@@ -28,7 +25,7 @@ export default function VitrineUsuarios(props) {
 						...novosMembros,
 					]) // adiciona os novos membros ao array (nao zera como na mudanca de  grupo)
 			)
-			.catch((error) => console.log(error));
+			.catch((error) => alert(error));
 	}, [paginaAtual]);
 
 	useEffect(() => {
@@ -47,27 +44,7 @@ export default function VitrineUsuarios(props) {
 	return (
 		<ul className="usuariosWrapper">
 			{membros.map((membro) => (
-				<li href="#" key={membro.id}>
-					<div className="usuarioCard">
-						<div className="usuarioAvatar">
-							<img
-								src={`https://github.com/${membro.login}.png`}
-								alt={membro.login}
-							/>
-						</div>
-						<div className="usuarioNome">{membro.login}</div>
-					</div>
-				</li>
-			))}
-			{/* {showModal && (
-				<Modal
-					membroSelecionado={membroSelecionado}
-					setShowModal={() => setShowModal()}
-				/>
-			)} */}
-			{/* {membros.map((membro) => (
 				<li
-					href="#"
 					key={membro.id}
 					onClick={() => {
 						setShowModal(true);
@@ -76,11 +53,16 @@ export default function VitrineUsuarios(props) {
 				>
 					<div className="usuarioCard">
 						<UserAvatar membro={membro} />
-						<div className="usuarioNome">{membro.name.first}</div>
+						<div className="usuarioNome">{membro.login}</div>
 					</div>
 				</li>
-			))} */}
-
+			))}
+			{showModal && (
+				<Modal
+					membroSelecionado={membroSelecionado}
+					setShowModal={() => setShowModal()}
+				/>
+			)}
 			<li id="finalRolagem"></li>
 		</ul>
 	);

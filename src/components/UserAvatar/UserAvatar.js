@@ -5,8 +5,8 @@ export default function UserAvatar(props) {
 	return (
 		<div className="usuarioAvatar">
 			<img
-				src={props.membro.picture.large}
-				alt={props.membro.name.first}
+				src={`https://github.com/${props.membro.login}.png`}
+				alt={props.membro.login}
 			/>
 		</div>
 	);
