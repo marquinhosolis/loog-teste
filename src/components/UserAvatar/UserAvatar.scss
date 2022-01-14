@@ -1,0 +1,13 @@
+.usuarioAvatar {
+	height: 80px;
+	width: 80px;
+	margin: 15px auto;
+	img {
+		display: block;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: center center;
+		border-radius: 50%;
+	}
+}

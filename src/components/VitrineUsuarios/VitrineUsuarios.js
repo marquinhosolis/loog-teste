@@ -2,6 +2,7 @@ import { React, useState, useEffect } from 'react';
 import './VitrineUsuarios.scss';
 
 import Modal from '../Modal/Modal';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 export default function VitrineUsuarios(props) {
 	const [membros, setMembros] = useState([]);
@@ -80,12 +81,7 @@ export default function VitrineUsuarios(props) {
 					}}
 				>
 					<div className="usuarioCard">
-						<div className="usuarioAvatar">
-							<img
-								src={membro.picture.large}
-								alt={membro.name.first}
-							/>
-						</div>
+						<UserAvatar membro={membro} />
 						<div className="usuarioNome">{membro.name.first}</div>
 					</div>
 				</li>

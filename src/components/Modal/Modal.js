@@ -1,6 +1,7 @@
 import React from 'react';
 import './Modal.scss';
 import { IoClose } from 'react-icons/io5';
+import UserAvatar from '../UserAvatar/UserAvatar';
 
 export default function Modal(props) {
 	return (
@@ -14,12 +15,7 @@ export default function Modal(props) {
 				>
 					<IoClose />
 				</div>
-				<div className="usuarioAvatar">
-					<img
-						src={props.membroSelecionado.picture.large}
-						alt={props.membroSelecionado.name.first}
-					/>
-				</div>
+				<UserAvatar membro={props.membroSelecionado} />
 				<div className="modalNome">
 					{props.membroSelecionado.name.first}
 				</div>

@@ -15,7 +15,7 @@
 		width: 100%;
 		max-width: 500px;
 		background: #fff;
-		padding-top: 80px;
+		padding-top: 60px;
 		border-radius: 8px;
 		border-bottom: solid 10px lightcoral;
 		text-align: center;
@@ -24,6 +24,8 @@
 			top: 8px;
 			right: 8px;
 			cursor: pointer;
+			font-size: 40px;
+			color: #ccc;
 		}
 		.modalNome {
 			margin-top: 16px;
@@ -51,7 +53,7 @@
 				strong {
 					font-weight: 900;
 					font-size: 28px;
-					color: #666;
+					color: lightcoral;
 				}
 				&:last-child {
 					width: 100%;
