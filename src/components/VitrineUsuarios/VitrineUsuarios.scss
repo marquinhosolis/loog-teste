@@ -10,6 +10,7 @@
 		display: block;
 		text-decoration: none;
 		color: inherit;
+		cursor: pointer;
 		@media (min-width: 768px) {
 			width: calc(25% - 15px);
 		}
@@ -51,7 +52,7 @@
 }
 
 #finalRolagem {
-	background: red;
-	height: 10px;
+	background: #fff;
+	height: 5px;
 	width: 100%;
 }
