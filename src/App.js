@@ -16,12 +16,6 @@ export default function App() {
 				<h1 className="pageTitle">
 					Exibindo membros do Grupo: {grupo}
 				</h1>
-				{/* searchbox */}
-				<input
-					className="searchBox"
-					type="search"
-					placeholder="Pesquisar usuário"
-				/>
 				{/* usuários do grupo */}
 				<VitrineUsuarios grupo={grupo} />
 				{/* detalhe do usuário */}

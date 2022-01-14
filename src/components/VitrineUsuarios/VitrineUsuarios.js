@@ -9,6 +9,7 @@ export default function VitrineUsuarios(props) {
 	const [paginaAtual, setPaginaAtual] = useState(1);
 	const [showModal, setShowModal] = useState(false);
 	const [membroSelecionado, setMembroSelecionado] = useState({});
+	const [busca, setBusca] = useState('');
 
 	// monta a url da api
 	const endpoint = `http://api.github.com/orgs/${props.grupo}/members`;
@@ -41,29 +42,48 @@ export default function VitrineUsuarios(props) {
 		return () => intersectionObserver.disconnect();
 	}, [props.grupo]);
 
+	useEffect(() => {
+		if (busca) {
+			const novosMembros = membros.filter((membro) =>
+				membro.login.toLowerCase().includes(busca.toLowerCase())
+			);
+			setMembros(novosMembros);
+		} else {
+			setMembros(membros);
+		}
+	}, [busca]);
+
 	return (
-		<ul className="usuariosWrapper">
-			{membros.map((membro) => (
-				<li
-					key={membro.id}
-					onClick={() => {
-						setShowModal(true);
-						setMembroSelecionado(membro);
-					}}
-				>
-					<div className="usuarioCard">
-						<UserAvatar membro={membro} />
-						<div className="usuarioNome">{membro.login}</div>
-					</div>
-				</li>
-			))}
-			{showModal && (
-				<Modal
-					membroSelecionado={membroSelecionado}
-					setShowModal={() => setShowModal()}
-				/>
-			)}
-			<li id="finalRolagem"></li>
-		</ul>
+		<>
+			<input
+				className="searchBox"
+				type="search"
+				placeholder="Pesquisar usuário"
+				onChange={(e) => setBusca(e.target.value)}
+			/>
+			<ul className="usuariosWrapper">
+				{membros.map((membro) => (
+					<li
+						key={membro.id}
+						onClick={() => {
+							setShowModal(true);
+							setMembroSelecionado(membro);
+						}}
+					>
+						<div className="usuarioCard">
+							<UserAvatar membro={membro} />
+							<div className="usuarioNome">{membro.login}</div>
+						</div>
+					</li>
+				))}
+				{showModal && (
+					<Modal
+						membroSelecionado={membroSelecionado}
+						setShowModal={() => setShowModal()}
+					/>
+				)}
+				<li id="finalRolagem"></li>
+			</ul>
+		</>
 	);
 }
