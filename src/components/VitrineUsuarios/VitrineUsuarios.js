@@ -12,7 +12,7 @@ export default function VitrineUsuarios(props) {
 	const [busca, setBusca] = useState('');
 
 	// monta a url da api
-	const endpoint = `http://api.github.com/orgs/${props.grupo}/members`;
+	const endpoint = `https://api.github.com/orgs/${props.grupo}/members`;
 	const urlApi = `${endpoint}?per_page=25&page=${paginaAtual}&order=DESC`;
 
 	// useEffect para controlar a paginação (incrementado com scroll infinito)
