@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import './Modal.scss';
 import { IoClose } from 'react-icons/io5';
 import UserAvatar from '../UserAvatar/UserAvatar';
-import { useEffect } from 'react/cjs/react.development';
 
 export default function Modal(props) {
 	const [detalheMembro, setDetalheMembro] = useState({});
