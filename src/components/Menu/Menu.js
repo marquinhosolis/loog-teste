@@ -13,23 +13,17 @@ export default function Menu(props) {
 	return (
 		<nav>
 			<ul>
-				<li>
-					<a onClick={() => mudarGrupo('Angular')}>
-						<IoLogoAngular />
-						<span>Angular</span>
-					</a>
+				<li onClick={() => mudarGrupo('Angular')}>
+					<IoLogoAngular />
+					<span>Angular</span>
 				</li>
-				<li>
-					<a onClick={() => mudarGrupo('Facebook')}>
-						<IoLogoReact />
-						<span>React</span>
-					</a>
+				<li onClick={() => mudarGrupo('Facebook')}>
+					<IoLogoReact />
+					<span>React</span>
 				</li>
-				<li>
-					<a onClick={() => mudarGrupo('VueJs')}>
-						<IoLogoVue />
-						<span>VueJs</span>
-					</a>
+				<li onClick={() => mudarGrupo('VueJs')}>
+					<IoLogoVue />
+					<span>VueJs</span>
 				</li>
 			</ul>
 		</nav>
