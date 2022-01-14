@@ -40,3 +40,7 @@ Passo a passo para iniciar o projeto:
 3. Depois de instaladas rode o comando `npm start` para iniciar a aplicação.
 
 A aplicação irá executar no endereço http://localhost:3000 em seu navegador.
+
+## Aplicação online
+
+Caso tenha alguma dificuldade nesse processo, a aplicação também está disponível em: https://loog-teste-5ulw1a8vi-marquinhosolis.vercel.app/
