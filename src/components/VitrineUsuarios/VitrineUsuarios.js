@@ -11,21 +11,11 @@ export default function VitrineUsuarios(props) {
 	const [membroSelecionado, setMembroSelecionado] = useState({});
 
 	// monta a url da api
-	// const endpoint = `http://api.github.com/orgs/${props.grupo}/members`;
-	// const urlApi = `${endpoint}?per_page=25&page=${paginaAtual}`;
+	const endpoint = `http://api.github.com/orgs/${props.grupo}/members`;
+	const urlApi = `${endpoint}?per_page=25&page=${paginaAtual}`;
 
-	const endpoint = `https://randomuser.me/api/`;
-	const urlApi = `${endpoint}?results=25&gender=${props.group}`;
-
-	useEffect(() => {
-		const intersectionObserver = new IntersectionObserver((entries) => {
-			if (entries.some((entry) => entry.isIntersecting)) {
-				setPaginaAtual((paginaState) => paginaState + 1);
-			}
-		});
-		intersectionObserver.observe(document.querySelector('#finalRolagem'));
-		return () => intersectionObserver.disconnect();
-	}, []);
+	//const endpoint = `https://randomuser.me/api/`;
+	//const urlApi = `${endpoint}?results=25&gender=${props.group}`;
 
 	// useEffect para controlar a paginação (incrementado com scroll infinito)
 	useEffect(() => {
@@ -35,7 +25,7 @@ export default function VitrineUsuarios(props) {
 				(novosMembros) =>
 					setMembros((prevMembros) => [
 						...prevMembros,
-						...novosMembros.results,
+						...novosMembros,
 					]) // adiciona os novos membros ao array (nao zera como na mudanca de  grupo)
 			)
 			.catch((error) => console.log(error));
@@ -44,15 +34,19 @@ export default function VitrineUsuarios(props) {
 	useEffect(() => {
 		setMembros([]);
 		setPaginaAtual(1);
-		fetch(urlApi)
-			.then((response) => response.json())
-			.then((data) => setMembros(data.results))
-			.catch((error) => console.log(error));
+
+		const intersectionObserver = new IntersectionObserver((entries) => {
+			if (entries.some((entry) => entry.isIntersecting)) {
+				setPaginaAtual((paginaState) => paginaState + 1);
+			}
+		});
+		intersectionObserver.observe(document.querySelector('#finalRolagem'));
+		return () => intersectionObserver.disconnect();
 	}, [props.grupo]);
 
 	return (
 		<ul className="usuariosWrapper">
-			{/* {membros.map((membro) => (
+			{membros.map((membro) => (
 				<li href="#" key={membro.id}>
 					<div className="usuarioCard">
 						<div className="usuarioAvatar">
@@ -64,14 +58,14 @@ export default function VitrineUsuarios(props) {
 						<div className="usuarioNome">{membro.login}</div>
 					</div>
 				</li>
-			))} */}
-			{showModal && (
+			))}
+			{/* {showModal && (
 				<Modal
 					membroSelecionado={membroSelecionado}
 					setShowModal={() => setShowModal()}
 				/>
-			)}
-			{membros.map((membro) => (
+			)} */}
+			{/* {membros.map((membro) => (
 				<li
 					href="#"
 					key={membro.id}
@@ -85,7 +79,7 @@ export default function VitrineUsuarios(props) {
 						<div className="usuarioNome">{membro.name.first}</div>
 					</div>
 				</li>
-			))}
+			))} */}
 
 			<li id="finalRolagem"></li>
 		</ul>
