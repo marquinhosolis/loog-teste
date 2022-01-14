@@ -6,7 +6,6 @@ import { useEffect } from 'react/cjs/react.development';
 
 export default function Modal(props) {
 	const [detalheMembro, setDetalheMembro] = useState({});
-	const [detalheMembroData, setDetalheMembroData] = useState('');
 
 	useEffect(() => {
 		fetch(`https://api.github.com/users/${props.membroSelecionado.login}`)

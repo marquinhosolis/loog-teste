@@ -27,7 +27,7 @@ export default function VitrineUsuarios(props) {
 					]) // adiciona os novos membros ao array (nao zera como na mudanca de  grupo)
 			)
 			.catch((error) => alert(error));
-	}, [paginaAtual]);
+	}, [paginaAtual, urlApi);
 
 	useEffect(() => {
 		setMembros([]);
@@ -48,8 +48,10 @@ export default function VitrineUsuarios(props) {
 				membro.login.toLowerCase().includes(busca.toLowerCase())
 			);
 			setMembros(novosMembros);
+		} else {
+			setMembros(membros);
 		}
-	}, [busca]);
+	}, [busca, membros]);
 
 	return (
 		<>
