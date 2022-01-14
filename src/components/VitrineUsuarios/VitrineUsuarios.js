@@ -48,8 +48,6 @@ export default function VitrineUsuarios(props) {
 				membro.login.toLowerCase().includes(busca.toLowerCase())
 			);
 			setMembros(novosMembros);
-		} else {
-			setMembros(membros);
 		}
 	}, [busca]);
 
