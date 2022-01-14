@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Teste prático Loog - Lello
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+projeto desenvolvido com [React](https://github.com/facebook/create-react-app) como teste para o processo seletivo para a função de front-end.
 
-## Available Scripts
+## Requisitos técnicos
 
-In the project directory, you can run:
+O objetivo do desafio é criar uma página web que liste os membros de um dos três grupos do GitHub a seguir:
 
-### `npm start`
+1. Angular - https://github.com/angular
+2. Facebook (React) - https://github.com/facebook
+3. vuejs - https://github.com/vuejs
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O projeto pode ser feito usando JS e/ou qualquer framework de sua preferência. Não há um limite de tempo para implementar cada tarefa, mas será necessário fazer o monitoramento do tempo de desenvolvimento, considere utilizar alguma ferramenta de time-tracking como Wakatime, Clockify, Toggl, etc.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Requisitos
+Você deve criar uma página que tenha os seguintes requisitos:
+● Lista com os atuais membros do grupo que escolheu no GitHub, com login e foto
+● Campo de busca para filtrar os membros (por login)
+● Ao clicar em um membro, exibir as seguintes informações daquele usuário:
+○ Nome
+○ Quantidade de repositórios
+○ Quantidade de seguidores
+○ Data em que a pessoa entrou no github
 
-### `npm test`
+Os membros do grupo escolhido, assim como suas informações, devem ser carregados de modo dinâmico pela API do GitHub: https://api.github.com/orgs/angular/public_members https://api.github.com/orgs/facebook/public_members https://api.github.com/orgs/vuejs/public_members https://api.github.com/users/{login}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instruções para rodar o projeto
 
-### `npm run build`
+Esse projeto foi construído em um ambiente com Node na versão 14.17.6. Assegure-se de usar a mesma versão para evitar conflitos.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Passo a passo para iniciar o projeto:
+1: clonar este repositório em uma pasta local
+2: na pasta onde o projeto foi copiado, abra o terminal de comando e digite: `npm install` para instalar todas as dependências
+3: Depois de instaladas rode o comando `npm start` para iniciar a aplicação.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A aplicação irá executar no endereço http://localhost:3000 em seu navegador.
